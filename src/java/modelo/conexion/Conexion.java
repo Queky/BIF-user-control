@@ -256,6 +256,18 @@ public Connection getConexion(){
     return nombre;
  }
 
+    public boolean esAdmin(String usuario) throws SQLException {
+    
+        Connection con = this.getConexion();
+        String query = "select esadmin from usuarios where email= '"+usuario+"'";
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(query);
+        rs.first();
+        boolean esadmin = rs.getBoolean("esadmin");
+        cerrarConexion(con);
+        return esadmin;
+    }
+
 
 
 }

@@ -68,9 +68,13 @@ public class Acceder extends HttpServlet {
         try {
             if(c.comprobarUsuario(correo, contrasena)){
                 nombre = c.obtenerNombre(correo);
+                boolean esAdmin = c.esAdmin(correo);
                 s.setAttribute("usuario", nombre);
                 s.setAttribute("logged", true);
-                request.getRequestDispatcher("JSP/PaginaUsuario.jsp").forward(request, response);
+                if(!esAdmin)
+                    request.getRequestDispatcher("JSP/PaginaUsuario.jsp").forward(request, response);
+                else
+                    request.getRequestDispatcher("JSP/PaginaAdmin.jsp").forward(request, response);
             }
             else{
                 s.setAttribute("existe", "noExiste");
