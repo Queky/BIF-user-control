@@ -42,12 +42,8 @@
             <div class="container" style="text-align: center">
                     <ul class="nav nav-pills centered">
                         <li class="active"><a data-toggle="pill" href="#disponibles">Competiciones disponibles</a></li>
-<<<<<<< HEAD
                         <li><a data-toggle="pill" href="#asistidas">Asistencia</a></li>
                         <li><a data-toggle="pill" href="#salir">Salir</a></li>
-=======
-                       <!-- <li><a data-toggle="pill" href="#asistidas">Competiciones asistidas</a></li>-->
->>>>>>> origin/joseba
                     </ul>
                 <div class="tab-content">
                     <div id="disponibles" class="tab-pane fade in active">

@@ -17,7 +17,7 @@ public class ListaCompeticiones {
     private ArrayList<Competicion> competiciones;
     
     public ListaCompeticiones(){
-        
+        competiciones = new ArrayList<>();
     }
 
     public ArrayList<Competicion> getCompeticiones() {

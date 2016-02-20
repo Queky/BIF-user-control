@@ -17,7 +17,7 @@ public class ListaUsuarios {
     
     
     public ListaUsuarios(){
-        
+        usuarios = new ArrayList<>();
     }
 
     public ArrayList<Usuario> getUsuarios() {
