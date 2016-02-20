@@ -14,13 +14,11 @@ public class Competicion {
     
     private int id;
     private String nombre;
-    private int numJornadas;
     private Date fechaFin;
     
-    public Competicion(int id, String nombre, int numJornadas,Date fechaFin){
+    public Competicion(int id, String nombre,Date fechaFin){
         this.id = id;
         this.nombre = nombre;
-        this.numJornadas = numJornadas;
         this.fechaFin = fechaFin;
     }
 
@@ -38,14 +36,6 @@ public class Competicion {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public int getNumJornadas() {
-        return numJornadas;
-    }
-
-    public void setNumJornadas(int numJornadas) {
-        this.numJornadas = numJornadas;
     }
 
     public Date getFechaFin() {

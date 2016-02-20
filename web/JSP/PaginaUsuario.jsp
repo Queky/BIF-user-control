@@ -60,19 +60,16 @@
                             {
                                 Competicion comp = it.next();
                                 String nombre = comp.getNombre();
-                                int numJornadas = comp.getNumJornadas();
                                 String fechaFin = String.format("%1$td-%1$tm-%1$tY", comp.getFechaFin());
                             %>
                                                 <table class="tabla-pisos table-responsive" align="center">
                                                     <tr class="tabla-tr">
                                                         <th>Competición</th>
-                                                        <th>Jornadas</th>
                                                         <th>Fecha límite</th>
                                                         <th>Acción</th>
                                                     </tr>
                                                     <tr>
                                                         <td><%=nombre%></td>
-                                                        <td><%=numJornadas%></td>
                                                         <td><%=fechaFin%></td>
                                                         <td><form method="post" action=""><input type="radio" name="asistencia" value="No" checked >No asistir <br><input type="radio" name="asistencia" value="Si"> Asistir</form></td>
                                                     </tr> 
