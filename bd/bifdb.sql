@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `bifdb` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
-USE `bifdb`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bifdb
@@ -18,6 +16,31 @@ USE `bifdb`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `competicion`
+--
+
+DROP TABLE IF EXISTS `competicion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `competicion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `numJornadas` int(11) DEFAULT NULL,
+  `fechaFin` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `competicion`
+--
+
+LOCK TABLES `competicion` WRITE;
+/*!40000 ALTER TABLE `competicion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `competicion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -25,17 +48,19 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `apellido` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellidos` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
   `dni` varchar(8) COLLATE utf8_spanish_ci DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `rol` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `contraseña` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `esAdmin` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `dni_UNIQUE` (`dni`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `rol_UNIQUE` (`rol`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +69,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'pepe','hola','1234567s','hh','s');
+INSERT INTO `usuarios` VALUES (1,'pepe','hola','1234567s','hh','s',NULL,NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-20  3:54:49
+-- Dump completed on 2016-02-20 14:50:56
