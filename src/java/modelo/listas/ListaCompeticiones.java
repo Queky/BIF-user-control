@@ -30,7 +30,11 @@ public class ListaCompeticiones {
     
     public void añadirCompeticion(Competicion cm)
     {
-        competiciones.add(cm);
+        getCompeticiones().add(cm);
+    }
+    
+    public int tamanioLista(){
+        return getCompeticiones().size();
     }
     
     
