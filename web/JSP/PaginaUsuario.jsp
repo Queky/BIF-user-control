@@ -15,10 +15,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tu pagina</title>
-        <link href="../CSS/Estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <link href="CSS/Estilo.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="CSS/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
         <header>
@@ -66,7 +66,7 @@
                                                         <td><%=nombre%></td>
                                                         <td><%=numJornadas%></td>
                                                         <td><%=fechaFin%></td>
-                                                        <td><form method="post" action=""><input type="checkbox" value="No Asisitir" class="btn-success"><input type="checkbox" value="Asistir" class="btn-success"></form></td>
+                                                        <td><form method="post" action=""><input type="radio" name="asistencia" value="No" checked >No asistir <br><input type="radio" name="asistencia" value="Si"> Asistir</form></td>
                                                     </tr> 
                                                 </table><%
                                                 
