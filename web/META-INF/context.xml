@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <Context antiJARLocking="true" path="/BIF-user-control"/>
+=======
+<Context antiJARLocking="true" path="/BIF-user-control"/>
+
+>>>>>>> origin/joseba

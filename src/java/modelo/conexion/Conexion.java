@@ -222,8 +222,7 @@ public Connection getConexion(){
      /*añadimos las competiciones a la lista*/
      while(rs.next())
      {
-         Competicion comp = new Competicion(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDate(4));
-         lista.añadirCompeticion(comp);
+         lista.añadirCompeticion(new Competicion(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDate(4)));
      }
      cerrarConexion(con);
      return lista;

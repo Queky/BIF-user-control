@@ -4,7 +4,12 @@
     Author     : inakisanchez
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.entidades.Competicion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.conexion.Conexion"%>
+<%@page import="modelo.listas.ListaCompeticiones"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,11 +42,57 @@
             <div class="container" style="text-align: center">
                     <ul class="nav nav-pills centered">
                         <li class="active"><a data-toggle="pill" href="#disponibles">Competiciones disponibles</a></li>
+<<<<<<< HEAD
                         <li><a data-toggle="pill" href="#asistidas">Asistencia</a></li>
                         <li><a data-toggle="pill" href="#salir">Salir</a></li>
+=======
+                       <!-- <li><a data-toggle="pill" href="#asistidas">Competiciones asistidas</a></li>-->
+>>>>>>> origin/joseba
                     </ul>
                 <div class="tab-content">
                     <div id="disponibles" class="tab-pane fade in active">
+                        <%
+                        Conexion con = new Conexion();
+                        ListaCompeticiones ls = con.getCompeticiones();
+                        
+                        if(ls.tamanioLista() > 0)
+                        {
+                            ArrayList<Competicion> al = ls.getCompeticiones();
+                            Iterator<Competicion> it = al.iterator();
+                            
+                            while(it.hasNext())
+                            {
+                                Competicion comp = it.next();
+                                String nombre = comp.getNombre();
+                                int numJornadas = comp.getNumJornadas();
+                                String fechaFin = String.format("%1$td-%1$tm-%1$tY", comp.getFechaFin());
+                                
+                                
+                            %>
+                                                <table class="tabla-pisos table-responsive" align="center">
+                                                    <tr class="tabla-tr">
+                                                        <th>Competición</th>
+                                                        <th>Jornadas</th>
+                                                        <th>Fecha límite</th>
+                                                        <th>Acción</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><%=nombre%></td>
+                                                        <td><%=numJornadas%></td>
+                                                        <td><%=fechaFin%></td>
+                                                        <td><form method="post" action=""><input type="checkbox" value="No Asisitir" class="btn-success"><input type="checkbox" value="Asistir" class="btn-success"></form></td>
+                                                    </tr> 
+                                                </table><%
+                                                
+                                                }
+                                            } else {%>
+                                               <h4 class="titu-gestion-reservas">No hay competiciones ahora mismo</h4>     
+                                           <% 
+                                            }
+                        
+                        
+                        %>
+                        
                     </div>
                     <div id="asistidas" class="tab-pane fade">
                     </div>
