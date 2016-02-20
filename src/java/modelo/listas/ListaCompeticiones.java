@@ -28,7 +28,10 @@ public class ListaCompeticiones {
         this.competiciones = competiciones;
     }
     
-    
+    public void añadirCompeticion(Competicion cm)
+    {
+        competiciones.add(cm);
+    }
     
     
 }
