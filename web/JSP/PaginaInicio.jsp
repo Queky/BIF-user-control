@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="CSS/bootstrap.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/ValidacionInicio.js"></script>
     </head>
     <body>
     <header>
@@ -29,11 +30,17 @@
                 </ul>
             <div class="tab-content">
                 <div id="sesion" class="tab-pane fade in active">
-                    <br><p>Correo:</p><input class="boxes" type="text" id="email" placeholder="Correo" /><br>
-                    <br><p>Contraseña:</p><input class="boxes" type="password" id="contrasena" placeholder="Contraseña" />
+                    <form id="formInicio">
+                    <br><p>Correo</p><input class="boxes" type="text" id="email" placeholder="Correo" required /><br>
+                    <br><p>Contraseña</p><input class="boxes" type="password" id="contrasena" placeholder="Contraseña" required />
+                    <br><br><input type="button" id="btnEnviar" class="botonSubmit" value="Enviar" />
+                    </form>
                 </div>
                 <div id="registro" class="tab-pane fade">
-                    <br><p>Correo:</p><input class="boxes" type="text" id="email" placeholder="Correo" />
+                    <form id="formInicio">
+                    <br><p>Correo</p><input class="boxes" type="text" id="email2" placeholder="Correo" required />
+                    <br><br><input type="button" id="btnEnviar2" class="botonSubmit" value="Enviar" />
+                    </form>
                 </div>
             </div>
         </div>

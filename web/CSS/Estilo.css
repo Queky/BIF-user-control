@@ -13,7 +13,7 @@ html {
 }
 
 section {
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 .boxes {
@@ -37,4 +37,25 @@ section {
 
 .nav-tabs.centered, .nav-pills.centered {
     text-align:center;
+}
+
+.botonSubmit {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    background: #3366ff;
+    color: #ffffff;
+}
+
+.botonSubmit:hover {
+    background: #00cc33;
+    color: white;
+}
+
+
+.error {
+    border:  solid 3px red;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
 }
