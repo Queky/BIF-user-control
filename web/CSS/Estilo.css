@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-feb-2016, 1:16:57
+    Author     : inakisanchez
+*/
+
+html {
+    font-family: Verdana;
+}
+
+section {
+    margin-top: 10%;
+}
+
+.boxes {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.imagen {
+    alignment-adjust: central;
+    text-align: center;
+    display: inline-block;
+}
+
+.nav-tabs.centered > li, .nav-pills.centered > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs.centered, .nav-pills.centered {
+    text-align:center;
+}
