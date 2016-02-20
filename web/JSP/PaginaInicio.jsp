@@ -4,6 +4,11 @@
     Author     : inakisanchez
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.SQLException"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,16 +35,16 @@
                 </ul>
             <div class="tab-content">
                 <div id="sesion" class="tab-pane fade in active">
-                    <form id="formInicio">
-                    <br><p>Correo</p><input class="boxes" type="text" id="email" placeholder="Correo" required /><br>
-                    <br><p>Contraseña</p><input class="boxes" type="password" id="contrasena" placeholder="Contraseña" required />
-                    <br><br><input type="button" id="btnEnviar" class="botonSubmit" value="Enviar" />
+                    <form id="formInicio" action="JSP/PaginaUsuario.jsp">
+                        <br><p>Correo</p><input class="boxes" type="text" id="email" placeholder="Correo" required /><br>
+                        <br><p>Contraseña</p><input class="boxes" type="password" id="contrasena" placeholder="Contraseña" required />
+                        <br><br><input type="button" id="btnEnviar" class="botonSubmit" value="Enviar" />
                     </form>
                 </div>
                 <div id="registro" class="tab-pane fade">
-                    <form id="formInicio">
-                    <br><p>Correo</p><input class="boxes" type="text" id="email2" placeholder="Correo" required />
-                    <br><br><input type="button" id="btnEnviar2" class="botonSubmit" value="Enviar" />
+                    <form id="formInicio" action="JSP/PaginaUsuario.jsp">
+                        <br><p>Correo</p><input class="boxes" type="text" id="email2" placeholder="Correo" required />
+                        <br><br><input type="button" id="btnEnviar2" class="botonSubmit" value="Enviar" />
                     </form>
                 </div>
             </div>
