@@ -25,10 +25,9 @@ DROP TABLE IF EXISTS `competicion`;
 CREATE TABLE `competicion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `numJornadas` int(11) DEFAULT NULL,
   `fechaFin` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +36,7 @@ CREATE TABLE `competicion` (
 
 LOCK TABLES `competicion` WRITE;
 /*!40000 ALTER TABLE `competicion` DISABLE KEYS */;
+INSERT INTO `competicion` VALUES (1,'natacion','2016-05-02');
 /*!40000 ALTER TABLE `competicion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-20 14:50:56
+-- Dump completed on 2016-02-20 22:17:49
