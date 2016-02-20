@@ -17,7 +17,12 @@ public class ListaUsuarios {
     
     
     public ListaUsuarios(){
+<<<<<<< HEAD
         usuarios = new ArrayList<>();
+=======
+        usuarios = new ArrayList<Usuario>();
+        
+>>>>>>> origin/joseba
     }
 
     public ArrayList<Usuario> getUsuarios() {
