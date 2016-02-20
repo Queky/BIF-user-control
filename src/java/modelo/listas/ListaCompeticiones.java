@@ -17,12 +17,7 @@ public class ListaCompeticiones {
     private ArrayList<Competicion> competiciones;
     
     public ListaCompeticiones(){
-<<<<<<< HEAD
-        competiciones = new ArrayList<>();
-=======
         competiciones = new ArrayList<Competicion>();
-        
->>>>>>> origin/joseba
     }
 
     public ArrayList<Competicion> getCompeticiones() {

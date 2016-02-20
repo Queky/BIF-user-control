@@ -62,8 +62,6 @@
                                 String nombre = comp.getNombre();
                                 int numJornadas = comp.getNumJornadas();
                                 String fechaFin = String.format("%1$td-%1$tm-%1$tY", comp.getFechaFin());
-                                
-                                
                             %>
                                                 <table class="tabla-pisos table-responsive" align="center">
                                                     <tr class="tabla-tr">
@@ -85,8 +83,6 @@
                                                <h4 class="titu-gestion-reservas">No hay competiciones ahora mismo</h4>     
                                            <% 
                                             }
-                        
-                        
                         %>
                         
                     </div>

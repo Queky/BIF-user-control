@@ -23,13 +23,20 @@
             <h3>Gestion de la competición</h3>
         </div>
         <section class="centrarSection">
-            <table class="table-responsive center-block table-bordered">
+            <table style="white-space: nowrap">
                 <tr>
                     <td>
                         <p>Juez arbitro:</p>
                     </td>
                     <td>
-                        
+                        <div class="container">
+                            <div class="row">
+                                <div class="search">
+                                    <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+                                    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
