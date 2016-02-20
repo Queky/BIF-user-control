@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package modelo.entidades;
+import java.util.Date;
 
 /**
  *
@@ -14,11 +15,13 @@ public class Competicion {
     private int id;
     private String nombre;
     private int numJornadas;
+    private Date fechaFin;
     
-    public Competicion(int id, String nombre, int numJornadas){
+    public Competicion(int id, String nombre, int numJornadas,Date fechaFin){
         this.id = id;
         this.nombre = nombre;
         this.numJornadas = numJornadas;
+        this.fechaFin = fechaFin;
     }
 
     public int getId() {
@@ -44,6 +47,16 @@ public class Competicion {
     public void setNumJornadas(int numJornadas) {
         this.numJornadas = numJornadas;
     }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+    
+    
     
     
     

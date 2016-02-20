@@ -20,7 +20,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
 import javax.naming.InitialContext;
+import modelo.entidades.Competicion;
 import modelo.entidades.Usuario;
+import modelo.listas.ListaCompeticiones;
 import modelo.listas.ListaUsuarios;
 
 public class Conexion {
@@ -202,6 +204,28 @@ public Connection getConexion(){
      cerrarConexion(con);
      return lista;   
      
+ }
+ 
+ /*recoge las competiciones de la base de datos y las guarda en una lista*/
+ public ListaCompeticiones getCompeticiones() throws SQLException{
+     /*abrimos la conexion*/
+     Connection con = this.getConexion();
+     /*creamos la sentencia*/
+     String sql = "SELECT * FROM COMPETICION";
+     /*ejecutamos la sentencia*/
+     Statement st = con.createStatement();
+     ResultSet rs = st.executeQuery(sql);
+     
+     /*creamos la lista de competiciones*/
+     ListaCompeticiones lista = new ListaCompeticiones();
+     /*añadimos las competiciones a la lista*/
+     while(rs.next())
+     {
+         Competicion comp = new Competicion(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDate(4));
+         lista.añadirCompeticion(comp);
+     }
+     cerrarConexion(con);
+     return lista;
  }
 
 
