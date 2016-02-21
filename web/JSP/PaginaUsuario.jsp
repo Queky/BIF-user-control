@@ -25,14 +25,14 @@
     %>
     <body>
         <header>
-            <div class="cabecera">
+            <div style="text-align: center">
                 <h1>Bizkaiko Igeriketa Federazioa</h1>
             </div>
         </header>
         <%
             if(s.getAttribute("logged")==null){
-                %><p>No se a identificado.</p>
-                <a href="../Inicio"><p>Volver a la pagina de inicio</p></a>
+            %><div style="text-align: center"><p>No se a identificado.</p>
+                <a href="Inicio"><p>Volver a la pagina de inicio</p></a></div>
                 <%}else{
         %>
         <section style="text-align: center">
@@ -62,27 +62,24 @@
                                 String nombre = comp.getNombre();
                                 String fechaFin = String.format("%1$td-%1$tm-%1$tY", comp.getFechaFin());
                             %>
-                                                <table class="table-responsive" align="center">
-                                                    <tr class="tabla-tr">
+                            <form>    
+                                <table align="center" style="width: 40%">
+                                <br><tr>
                                                         <th><p>Competición</p></th>
-                                                        <th><p>Fecha límite</p></th>
-                                                        <th><p>Acción</p></th>
+                                                        <th><p>Asistir</p></th>
+                                                        <th><p>No asistir</p></th>
+                                                        <th></th>
                                                     </tr>
-                                                    <tr>
+                                                    <tr style="text-align: left">
                                                         <td><%=nombre%></td>
-                                                        <td><%=fechaFin%></td>
-                                                        <td style="text-align: left">
-                                                            <form method="post" action="">
-                                                                <input type="radio" name="asistencia" value="No" checked /><p>No asistir</p>
-                                                                <br><input type="radio" name="asistencia" value="Si" /><p>Asistir</p>
-                                                                <input type="submit" class="boxes" id="eleccionUsuario" name="eleccionUsuario" />
-                                                            </form>
-                                                        </td>
+                                                        <td><input type="radio" value="si" name="asistencia" id="asistencia"></td>
+                                                        <td><input type="radio" value="no" name="asistencia" id="asistencia" checked ></td>
+                                                        <td><input type="submit" value="Confirmar" class="boxes"/></td>
                                                     </tr> 
-                                                </table><%
+                                                </table></form><%
                                                 }
                                             } else {%>
-                                               <h4 class="titu-gestion-reservas">No hay competiciones ahora mismo</h4>     
+                                                <br><p>No hay competiciones ahora mismo</p>     
                                            <% 
                                             }
                         %>

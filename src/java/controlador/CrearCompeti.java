@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -61,16 +62,23 @@ public class CrearCompeti extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        HttpSession s = request.getSession();
         Conexion c = new Conexion();
         String nombreComp = (String) request.getParameter("nombreComp");
         String tipoComp = (String) request.getParameter("tipoComp");
         int numCalles = Integer.parseInt((String) request.getParameter("numCalles"));
         String fechaFin = (String) request.getParameter("fechaFin");
+        
+        //java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        //java.util.Date dt;
         try {
+            //dt = sdf.parse(fechaFin);
+            //java.sql.Date sqlD = new java.sql.Date(dt.getTime());
             c.anyadirCompeticion(nombreComp, tipoComp, numCalles, fechaFin);
         } catch (SQLException ex) {
             Logger.getLogger(CrearCompeti.class.getName()).log(Level.SEVERE, null, ex);
         }
+        s.setAttribute("logged", true);
         request.getRequestDispatcher("JSP/PaginaAdmin.jsp").forward(request, response);
     }
 

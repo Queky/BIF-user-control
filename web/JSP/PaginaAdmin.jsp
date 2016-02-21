@@ -26,8 +26,8 @@
         </header>
         <%
             if(s.getAttribute("logged")==null){
-                %><p>No se a identificado.</p>
-                <a href="../Inicio"><p>Volver a la pagina de inicio</p></a>
+            %><div style="text-align: center"><p>No se a identificado.</p>
+                <a href="Inicio"><p>Volver a la pagina de inicio</p></a></div>
                 <%}else{
         %>
         <section style="text-align: center">
@@ -53,7 +53,7 @@
                                 <input type="radio" value="electronico" name="tipoComp">Electrónico<br><br>
                             </div>
                             <label>Número de calles:</label><br>
-                            <input type="number" name="numCalles"><br><br>
+                            <input type="number" name="numCalles" min="0" max="10"><br><br>
                             <label>Fecha límite de inscripción</label><br>
                             <input type="date" name="fechaFin"><br><br>
                             <input type="submit" name="crear" value="Añadir"><br>
