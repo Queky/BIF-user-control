@@ -43,7 +43,7 @@
                     </ul>
                 <div class="tab-content">
                     <div id="administrar" class="tab-pane fade in active">
-                        
+                        <a href=""><p>Añadir competición</p></a>
                     </div>
                     <div id="disponibles" class="tab-pane fade">
                     
@@ -55,7 +55,7 @@
                         <br><p>¿Está seguro de que desea salir?</p>
                         <a href="Inicio" ><p>Salir</p></a>
                         <%
-                            s.setAttribute("logged", null);
+                            s.setAttribute("logged", null);}
                         %>
                     </div>
                 </div>
