@@ -43,13 +43,13 @@
                     </ul>
                 <div class="tab-content">
                     <div id="administrar" class="tab-pane fade in active">
-                        <a href=""><p>Añadir competición</p></a>
+                        <br><a href="JSP/GestionDeCompeticiones.jsp"><p>Añadir competición</p></a>
                     </div>
                     <div id="disponibles" class="tab-pane fade">
-                    
+                        <p>En contruccion</p>
                     </div>
-                    <div id="asistidad" class="tab-pane fade">
-                    
+                    <div id="asistidas" class="tab-pane fade">
+                        <p>En contruccion</p>
                     </div>
                     <div id="salir" class="tab-pane fade">
                         <br><p>¿Está seguro de que desea salir?</p>

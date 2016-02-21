@@ -62,26 +62,30 @@
                                 String nombre = comp.getNombre();
                                 String fechaFin = String.format("%1$td-%1$tm-%1$tY", comp.getFechaFin());
                             %>
-                                                <table class="tabla-pisos table-responsive" align="center">
+                                                <table class="table-responsive" align="center">
                                                     <tr class="tabla-tr">
-                                                        <th>Competición</th>
-                                                        <th>Fecha límite</th>
-                                                        <th>Acción</th>
+                                                        <th><p>Competición</p></th>
+                                                        <th><p>Fecha límite</p></th>
+                                                        <th><p>Acción</p></th>
                                                     </tr>
                                                     <tr>
                                                         <td><%=nombre%></td>
                                                         <td><%=fechaFin%></td>
-                                                        <td><form method="post" action=""><input type="radio" name="asistencia" value="No" checked >No asistir <br><input type="radio" name="asistencia" value="Si"> Asistir</form></td>
+                                                        <td style="text-align: left">
+                                                            <form method="post" action="">
+                                                                <input type="radio" name="asistencia" value="No" checked /><p>No asistir</p>
+                                                                <br><input type="radio" name="asistencia" value="Si" /><p>Asistir</p>
+                                                                <input type="submit" class="boxes" id="eleccionUsuario" name="eleccionUsuario" />
+                                                            </form>
+                                                        </td>
                                                     </tr> 
                                                 </table><%
-                                                
                                                 }
                                             } else {%>
                                                <h4 class="titu-gestion-reservas">No hay competiciones ahora mismo</h4>     
                                            <% 
                                             }
                         %>
-                        
                     </div>
                     <div id="asistidas" class="tab-pane fade">
                     </div>
