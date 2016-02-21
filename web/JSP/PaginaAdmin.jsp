@@ -26,8 +26,8 @@
         </header>
         <%
             if(s.getAttribute("logged")==null){
-                %><p>No se a identificado.</p>
-                <a href="../Inicio"><p>Volver a la pagina de inicio</p></a>
+            %><div style="text-align: center"><p>No se a identificado.</p>
+                <a href="Inicio"><p>Volver a la pagina de inicio</p></a></div>
                 <%}else{
         %>
         <section style="text-align: center">
@@ -36,20 +36,37 @@
         <section>
             <div class="container" style="text-align: center">
                     <ul class="nav nav-pills centered">
-                        <li class="active"><a data-toggle="pill" href="#administrar">Administrar competiciones</a></li>
+                        <li class="active"><a data-toggle="pill" href="#anadir">Añadir competicion</a></li>
+                        <li><a data-toggle="pill" href="#encurso">Competiciones en curso</a></li>
                         <li><a data-toggle="pill" href="#disponibles">Competiciones disponibles</a></li>
                         <li><a data-toggle="pill" href="#asistidas">Asistencia</a></li>
                         <li><a data-toggle="pill" href="#salir">Salir</a></li>
                     </ul>
                 <div class="tab-content">
-                    <div id="administrar" class="tab-pane fade in active">
-                        <a href=""><p>Añadir competición</p></a>
+                    <div id="anadir" class="tab-pane fade in active">
+                        <form method="POST" action="CrearCompeti">
+                            <br><label>Nombre de la competición:</label><br>
+                            <input type="text" name="nombreComp" ><br><br>
+                            <label>Tipo de competición:</label><br>
+                            <div style="text-align: center">
+                                <input type="radio" value="manual" name="tipoComp">Manual<br>
+                                <input type="radio" value="electronico" name="tipoComp">Electrónico<br><br>
+                            </div>
+                            <label>Número de calles:</label><br>
+                            <input type="number" name="numCalles" min="0" max="10"><br><br>
+                            <label>Fecha límite de inscripción</label><br>
+                            <input type="date" name="fechaFin"><br><br>
+                            <input type="submit" name="crear" value="Añadir"><br>
+                        </form>
+                    </div>
+                    <div id="encurso" class="tab-pane fade">
+                        <br><p>En contruccion</p>
                     </div>
                     <div id="disponibles" class="tab-pane fade">
-                    
+                        <br><p>En contruccion</p>
                     </div>
-                    <div id="asistidad" class="tab-pane fade">
-                    
+                    <div id="asistidas" class="tab-pane fade">
+                        <br><p>En contruccion</p>
                     </div>
                     <div id="salir" class="tab-pane fade">
                         <br><p>¿Está seguro de que desea salir?</p>
