@@ -268,6 +268,11 @@ public Connection getConexion(){
         return esadmin;
     }
 
-
-
+    public void anyadirCompeticion(String nombreComp, String tipoComp, int numCalles, String fechaFin) throws SQLException {
+        Connection con = this.getConexion();
+        String query = "insert into competicion values ('"+nombreComp+"', '"+fechaFin+"', '"+tipoComp+"', '"+numCalles+"') ";
+        Statement st = con.createStatement();
+        st.execute(query);
+        cerrarConexion(con);
+    }
 }

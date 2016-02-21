@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="CSS/bootstrap.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
     </head>
     <%
         HttpSession s = request.getSession();
@@ -37,30 +36,31 @@
         <section>
             <div class="container" style="text-align: center">
                     <ul class="nav nav-pills centered">
-                        <li class="active"><a data-toggle="pill" href="#administrar">Administrar competiciones</a></li>
+                        <li class="active"><a data-toggle="pill" href="#anadir">Añadir competicion</a></li>
+                        <li><a data-toggle="pill" href="#encurso">Competiciones en curso</a></li>
                         <li><a data-toggle="pill" href="#disponibles">Competiciones disponibles</a></li>
                         <li><a data-toggle="pill" href="#asistidas">Asistencia</a></li>
                         <li><a data-toggle="pill" href="#salir">Salir</a></li>
                     </ul>
                 <div class="tab-content">
-                    <div id="administrar" class="tab-pane fade in active">
-                        <br><a class="bajar nav nav-tabs"><p>Añadir competición</p></a><br>
-                        <div class="desplegable">
-                            <form method="POST" action="CrearCompeti">
-                                <label>Título de la competición:</label><br>
-                                <input type="text" name="nombre" ><br><br>
-                                <label>Tipo de competición:</label><br>
-                                <div style="text-align: center">
-                                    <input type="radio" name="tipoComp">Manual<br>
-                                    <input type="radio" name="tipoComp">Electrónico<br><br>
-                                </div>
-                                <label>Número de calles:</label><br>
-                                <input type="number" name="numCalles"><br><br>
-                                <label>Fecha límite de inscripción</label><br>
-                                <input type="date" name="fechaFin"><br><br><br>
-                                <input type="submit" name="crear" value="Añadir"><br>
-                            </form>
-                        </div>
+                    <div id="anadir" class="tab-pane fade in active">
+                        <form method="POST" action="CrearCompeti">
+                            <br><label>Nombre de la competición:</label><br>
+                            <input type="text" name="nombreComp" ><br><br>
+                            <label>Tipo de competición:</label><br>
+                            <div style="text-align: center">
+                                <input type="radio" value="manual" name="tipoComp">Manual<br>
+                                <input type="radio" value="electronico" name="tipoComp">Electrónico<br><br>
+                            </div>
+                            <label>Número de calles:</label><br>
+                            <input type="number" name="numCalles"><br><br>
+                            <label>Fecha límite de inscripción</label><br>
+                            <input type="date" name="fechaFin"><br><br>
+                            <input type="submit" name="crear" value="Añadir"><br>
+                        </form>
+                    </div>
+                    <div id="encurso" class="tab-pane fade">
+                        <br><p>En contruccion</p>
                     </div>
                     <div id="disponibles" class="tab-pane fade">
                         <br><p>En contruccion</p>
