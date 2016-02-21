@@ -8,6 +8,15 @@ $(document).ready(function(){
     $('.bajar').on('click',function(){
         $('.desplegable').fadeIn();
     });
+    $('#disponibles').on('click',function(){
+        $('.desplegable').fadeOut();
+    });
+    $('#asistidas').on('click',function(){
+        $('.desplegable').fadeOut();
+    });
+    $('#salir').on('click',function(){
+        $('.desplegable').fadeOut();
+    });
     
 });
 
