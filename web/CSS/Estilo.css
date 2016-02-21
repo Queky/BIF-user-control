@@ -16,6 +16,15 @@ section {
     margin-top: 5%;
 }
 
+.cabecera {
+    text-align: center;
+}
+
+.cerrarSesion {
+    text-align: right;
+    display: inline-block;
+}
+
 .boxes {
     padding: 5px;
     margin: 5px;

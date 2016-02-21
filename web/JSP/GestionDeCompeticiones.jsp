@@ -1,6 +1,6 @@
 <%-- 
-    Document   : GestionCompeticion
-    Created on : 20-feb-2016, 14:33:55
+    Document   : GestionDeCompeticiones
+    Created on : 21-feb-2016, 0:57:00
     Author     : inakisanchez
 --%>
 
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gestion de la competición</title>
+        <title>Gestion de la competicion</title>
     </head>
     <body>
-        <h2>Gestion de la competición</h2>
+        <h1>Bizkaiko Igeriketa Federazioa</h1>
     </body>
 </html>

@@ -16,6 +16,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.Clock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
@@ -226,6 +227,46 @@ public Connection getConexion(){
      cerrarConexion(con);
      return lista;
  }
+ 
+ public boolean comprobarUsuario (String usuario, String contrasena) throws SQLException{
+    //Abrimos la conexion
+    Connection con = this.getConexion();
+    //Creamos la sentencia
+    String query = "select email, contraseña from usuarios where email='"+usuario+"' and contraseña='"+contrasena+"' ;";
+    Statement st = con.createStatement();
+    ResultSet rs = st.executeQuery(query);
+    if(!rs.next()){
+        cerrarConexion(con);
+        return false;
+    }
+    else{
+        cerrarConexion(con);
+        return true;
+    }
+ }
+ 
+ public String obtenerNombre (String usuario) throws SQLException {
+    Connection con = this.getConexion();
+    String query = "select nombre from usuarios where email= '"+usuario+"'";
+    Statement st = con.createStatement();
+    ResultSet rs = st.executeQuery(query);
+    rs.first();
+    String nombre = rs.getString("nombre");
+    cerrarConexion(con);
+    return nombre;
+ }
+
+    public boolean esAdmin(String usuario) throws SQLException {
+    
+        Connection con = this.getConexion();
+        String query = "select esadmin from usuarios where email= '"+usuario+"'";
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(query);
+        rs.first();
+        boolean esadmin = rs.getBoolean("esadmin");
+        cerrarConexion(con);
+        return esadmin;
+    }
 
 
 

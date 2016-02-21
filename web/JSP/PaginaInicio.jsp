@@ -4,6 +4,8 @@
     Author     : inakisanchez
 --%>
 
+<%@page import="modelo.listas.ListaUsuarios"%>
+<%@page import="modelo.conexion.Conexion"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -35,14 +37,20 @@
                 </ul>
             <div class="tab-content">
                 <div id="sesion" class="tab-pane fade in active">
-                    <form id="formInicio" action="JSP/PaginaUsuario.jsp">
-                        <br><p>Correo</p><input class="boxes" type="text" id="email" placeholder="Correo" required /><br>
-                        <br><p>Contraseña</p><input class="boxes" type="password" id="contrasena" placeholder="Contraseña" required />
+                    <form id="formInicio" action="Acceder" method="POST">
+                        <br><p>Correo</p><input class="boxes" type="text" name="email" id="email" placeholder="Correo" required /><br>
+                        <br><p>Contraseña</p><input class="boxes" type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required />
                         <br><br><input type="button" id="btnEnviar" class="botonSubmit" value="Enviar" />
+                        <%
+                            HttpSession s = request.getSession(true);
+                            if(s.getAttribute("existe")!=null){            
+                                %><p>Los datos introducidos no son correctos.</p><%
+                                s.setAttribute("existe", null);}
+                        %>
                     </form>
                 </div>
                 <div id="registro" class="tab-pane fade">
-                    <form id="formInicio" action="JSP/PaginaUsuario.jsp">
+                    <form id="formInicio" method="POST">
                         <br><p>Correo</p><input class="boxes" type="text" id="email2" placeholder="Correo" required />
                         <br><br><input type="button" id="btnEnviar2" class="botonSubmit" value="Enviar" />
                     </form>
