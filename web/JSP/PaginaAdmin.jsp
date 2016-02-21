@@ -43,7 +43,27 @@
                     </ul>
                 <div class="tab-content">
                     <div id="administrar" class="tab-pane fade in active">
+<<<<<<< HEAD
                         <br><a href="JSP/GestionDeCompeticiones.jsp"><p>Añadir competición</p></a>
+=======
+                        <a class="bajar nav nav-tabs"><p>Añadir competición</p></a>
+                        <div class="desplegable">
+                            <form method="POST" action="CrearCompeti">
+                                <label>Título de la competición:</label>
+                                <input type="text" name="nombre" >
+                                <label>Tipo de competición:</label>
+                                <input type="radio" name="tipoComp">Manual<br>
+                                <input type="radio" name="tipoComp">Electrónico<br>
+                                <label>Número de calles:</label>
+                                <input type="number" name="numCalles">
+                                <label>Fecha límite de inscripción</label>
+                                <input type="date" name="fechaFin">
+                                <input type="submit" name="crear" value="Añadir">
+                                
+                            </form>
+                            
+                        </div>
+>>>>>>> origin/joseba
                     </div>
                     <div id="disponibles" class="tab-pane fade">
                         <p>En contruccion</p>
