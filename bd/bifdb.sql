@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `bifdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `bifdb`;
+-- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
 --
 -- Host: localhost    Database: bifdb
 -- ------------------------------------------------------
--- Server version	5.7.11-log
+-- Server version	5.7.10
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -51,7 +53,7 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `apellidos` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
-  `dni` varchar(8) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `dni` varchar(9) CHARACTER SET utf8 DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `rol` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `contraseña` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -60,7 +62,7 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `dni_UNIQUE` (`dni`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `rol_UNIQUE` (`rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +71,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'pepe','hola','1234567s','hh','s',NULL,NULL);
+INSERT INTO `usuarios` VALUES (1,'pepe','hola','1234567s','aaa@aa.aa','s','hola',NULL),(2,'sjdfb','lksndkd','322332B','aaaa@aa.aa','a','hola',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-20 22:17:49
+-- Dump completed on 2016-02-23 15:41:21
